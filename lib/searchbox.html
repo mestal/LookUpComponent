@@ -1,0 +1,29 @@
+<div class="etelSearch">
+	<input ng-disabled="ecDisabled" ng-model="searchText3" ng-keydown="onKeyDown1($event)" />
+	<img src="/LookUpComponent/images/search.png"  ng-click="clicked(searchText3)"  ng-disabled="disabled" />
+	<img src="/LookUpComponent/images/clear.png"  ng-click="clear()" ng-disabled="disabled" />
+</div>
+
+<div class="hoverInputDialogWidget" id="communityWidget" ng-show="ShowWidget" ng-style="{left: widgetLeft, top: widgetTop}">
+	<div class="formFieldArrow formFieldArrowBorder" style="left: -11px; top: 51px;"></div>
+	<div class="formFieldArrow" style="left: -10px; top: 51px;"></div>
+	<div class="hoverInputDialogContent">
+		<!--<select name="communityselector" ng-model="characteristic.Value" ng-click="multiOptionSetItemSelected(characteristic,characteristic.Value)" multiple style="z-index:99;width:135px;" ng-options="c.Name as c.Name for c in characteristic.Options" tabindex="4"></select>-->
+		<!--ul>
+			<li><span ng-click="itemSelected('Antalya')">Antalya</span></li>
+			<li><span ng-click="itemSelected('Ankara')">Ankara</span></li>
+		</ul-->
+		
+		<ul> 
+			<li ng-repeat="item in dataModel | filter:searchText3 | filter:filterfunc" ng-click="itemSelected(item)">
+				{{ item.name }}
+			</li>
+		</ul>
+		
+		
+		
+	</div>
+	<!--div class="hoverInputDialogButtons">  ng-click="itemSelected(item);"   ({'item': item})
+		<button name="hoverInputDialogOKButton" class="dialogButton" ng-click="hideCommunityWidget()">Done</button>
+	</div-->
+</div>

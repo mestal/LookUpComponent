@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/LookUpComponent/styles/main.css" />
+
+		<script src="/LookUpComponent/node_modules/angular/angular.min.js"></script>
+		<script src="/LookUpComponent/node_modules/jquery.min.js"></script>
+		<script src="/LookUpComponent/lib/component.js"></script>
+		<script src="/LookUpComponent/lib/search.js"></script>
+		
+	</head>
+	<body ng-app="demo">
+		<div ng-controller="defaultCtl">
+		<br><br><br>
+			<search-box 
+				ec-disabled="ecDisabled" 
+				selected-item="selectedCountry"
+				datamodel="countries"
+				customfilterfunc="countryfilterfunction(item2)"
+			>
+			</search-box>
+			<search-box 
+				ec-disabled="ecDisabled" 
+				selected-item="selectedCity"
+				datamodel="cities"
+				customfilterfunc="cityfilterfunction(item2)"
+			>
+			</search-box>
+			
+			<br><br><br>
+			<span ng-click="clickedGetCountry()">get selected country</span><br>
+			<span ng-click="clickedGetCity()">get selected city</span>
+		</div>
+		
+		<!--button>Click and Get Value</button  search-text="searchText1"  -->
+	</body>
+
+	<script>
+		(function(angular){
+			var m = angular.module("demo", ["components"]);
+			m.controller("defaultCtl", ["$scope", function($scope){
+				
+				$scope.countries = [
+					{
+						"name" : "Turkiye",
+						"id" : 1,
+						"number" : "TR"
+					},
+					{
+						"name" : "Almanya",
+						"id" : 2,
+						"number" : "DE"
+					}
+				];
+				
+				$scope.cities = [
+					{
+						"name" : "Kayseri",
+						"id" : 1,
+						"number" : 19,
+						"countryid" : 1
+					},
+					{
+						"name" : "Izmir",
+						"id" : 2,
+						"number" : 35,
+						"countryid" : 1
+					},
+					{
+						"name" : "Antalya",
+						"id" : 3,
+						"number" : 7,
+						"countryid" : 1
+					},
+					{
+						"name" : "Ankara",
+						"id" : 4,
+						"number" : 6,
+						"countryid" : 1
+					},
+					{
+						"name" : "Yozgat",
+						"id" : 5,
+						"number" : 66,
+						"countryid" : 1
+					},
+					{
+						"name" : "Konya",
+						"id" : 6,
+						"number" : 32,
+						"countryid" : 1
+					},
+					{
+						"name" : "Berlin",
+						"id" : 7,
+						"number" : 123,
+						"countryid" : 2
+					}
+				];
+				
+				
+				$scope.countryfilterfunction = function(item2){
+					return true;
+				};
+				
+				$scope.cityfilterfunction = function(item2){
+					if(!$scope.selectedCountry)
+						return false;
+					return (item2.countryid == $scope.selectedCountry.id);
+				};
+				
+				
+				$scope.clickedGetCountry = function(){
+					if($scope.selectedCountry == null)
+						alert('selectedCountry : null');
+					else
+						alert('name : ' + $scope.selectedCountry.name + ', id : ' + $scope.selectedCountry.id + ', number : ' + $scope.selectedCountry.number);
+					
+				};
+				
+				$scope.clickedGetCity = function(){
+					if($scope.selectedCity == null)
+						alert('selectedCity : null');
+					else
+						alert('name : ' + $scope.selectedCity.name + ', id : ' + $scope.selectedCity.id + ', number : ' + $scope.selectedCity.number);
+					
+				};
+				
+
+				
+			}]);
+		})(angular);
+		
+	</script>
+</html>
+
+

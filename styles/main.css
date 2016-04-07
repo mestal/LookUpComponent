@@ -1,0 +1,197 @@
+	body{
+      	font-size: 11px;
+          font-family: "Segoe UI", "Helvetica Neue", Helvetica, Tahoma, "Microsoft Sans Serif", Verdana, sans-serif;
+          color: #444;
+      }
+	  
+	  .etelSearch input {border-color:#c6c6c6; width:100px; margin-right:10px; }
+	  .etelSearch button {border-color:#c6c6c6; width:100px; margin-right:10px; }
+	  .etelTreeContainer .customerName {font-weight:bold; }
+	  .etelTreeContainer ul, .etelTreeContainer li {list-style-type: none; margin:0;padding:0; }
+	  .etelTreeContainer li {border-bottom:1px solid #eee; padding: 3px;}
+	  .etelTreeContainer ul li ul li:first-child {display:block; }
+	  
+      .etelTreeContainer label {cursor:pointer; }
+      .etelTreeContainer .sub1, .etelTreeContainer .sub2 { display: none; 
+          margin-left: 40px;}
+      
+      .etelTreeContainer :checked ~ .sub1, .etelTreeContainer :checked ~ .sub2 {
+          display: block;
+      }
+	  
+	  
+	  
+	  .base-class {
+		}
+
+		.base-class.Customer {
+		  //color: red;
+		  //font-size:3em;
+		  background-image: url('images/corporatecustomer_active.png');
+		}
+		
+		.base-class.Subscription {
+		  //color: red;
+		  //font-size:3em;
+		  background-image: url('images/subscription.png');
+		}
+		
+.etelPagingNext-active {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+	cursor: pointer;
+}
+	  
+	  
+	  /*
+	  .Customer {
+	  
+	  }
+      .Customer .iconcustom {
+                background-image: url('images/corporatecustomer_active.png');
+            }
+			
+	  .Subscription {
+	  
+	  }
+      .Subscription .iconcustom {
+                background-image: url('images/subscription.png');//images/subscription.png');
+            }
+	  */
+	  
+	  
+	/*** ICONS ***/
+      .icon { 
+            	width: 16px;
+            	height: 16px;
+              display: inline-block;
+			  background-repeat:no-repeat;
+              }
+      .icon-plus{
+                /*background-image: url('images/treeNodeUp.png');*/
+            }
+            
+      .icon-minus{
+                /*background-image: url('images/treeNodeDown.png'); */     	
+            }
+            
+      .icon-service {
+                background-image: url('images/service.png');
+            }
+      	  
+      .icon-subscription {
+                background-image: url('images/subscription.png');
+            }
+            
+      .icon-customer {
+                background-image: url('images/corporatecustomer.gif');
+            }
+            
+      .icon-customer-active {
+                background-image: url('images/corporatecustomer_active.png');
+            }
+			
+		/*** STATUS ***/	
+		.status {
+			border-radius:50%;
+			width:10px;
+			height:10px; 
+			margin:0 5px 0 8px;
+			display:inline-block;}
+			.status-active {
+			background: #88b916;}
+			.status-passive {
+			background: #b0b2b3;}
+			.status-prospect {
+			background: #7a0563;}
+			.status-suspend {
+			background: #e22118;}
+			.status-inactive, .status-deactivated {
+			background: #323232;}
+			.status-notCustomer {
+			background: #000;}
+			.status-onHold {
+			background: #f9ba00;}
+			
+        /*** PAGING ***/	
+        div.ms-crm-List-StatusBar,
+        div.ms-crm-List-StatusBar-Ex
+        {
+        height: 22px;
+        }
+        
+        div.ms-crm-List-StatusBar-Lite
+        {
+        height: 22px;
+        position: absolute;
+        bottom: 0px;
+        }
+        div.ms-crm-List-StatusBar-Ex-Lite
+        {
+        height : 22px;
+        visibility: hidden;
+        }
+        
+        tr.ms-crm-List-StatusBar
+        {
+        height: 22px;
+        }
+        
+        table.ms-crm-List-StatusBar
+        {
+        height: 22px;
+        width: 100%;
+        table-layout: fixed;
+        border-top-width: 1px;
+        border-top-style: solid;
+        }
+		
+        a.toolbarbutton,
+        a.toolbarbutton:active img,
+        a.toolbarbutton:hover img,
+        a.toolbarbutton:link img,
+        a.toolbarbutton:visited img
+        {
+        text-decoration: none;
+        border: none;
+        }
+		
+		
+		
+#dlg .ui-dialog-titlebar
+{
+    display:none;
+}
+
+
+
+/* HOVER INPUT DIALOG */
+.hoverInputDialogWidget
+{
+	position:absolute;
+	border:1px solid #D6D6D6;
+	padding:1px;
+	background-color:#FFFFFF;
+    z-index:1002;
+}
+
+.hoverInputDialogContent
+{
+	margin:18px;
+}
+
+.hoverInputDialogButtons
+{
+	background-color: #F8F8F8;
+	height:40px;
+}
+
+button.dialogButton
+{
+	float:right;
+	min-width: 58px;
+    max-width: 125px;
+    overflow: visible;
+    width: auto;
+}
