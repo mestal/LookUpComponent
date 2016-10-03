@@ -15,23 +15,21 @@
 				ec-disabled="ecDisabled" 
 				selected-item="selectedCountry"
 				datamodel="countries"
-				customfilterfunc="countryfilterfunction(item2)"
+				customfilterfunc="countryfilterfunction(item)"
 			>
 			</search-box>
 			<search-box 
 				ec-disabled="ecDisabled" 
 				selected-item="selectedCity"
 				datamodel="cities"
-				customfilterfunc="cityfilterfunction(item2)"
+				customfilterfunc="cityfilterfunction(item)"
 			>
 			</search-box>
 			
 			<br><br><br>
-			<span ng-click="clickedGetCountry()">get selected country</span><br>
-			<span ng-click="clickedGetCity()">get selected city</span>
+			<span ng-click="clickedGetCountry()">click to get selected country</span><br>
+			<span ng-click="clickedGetCity()">click to get selected city</span>
 		</div>
-		
-		<!--button>Click and Get Value</button  search-text="searchText1"  -->
 	</body>
 
 	<script>
